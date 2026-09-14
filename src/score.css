@@ -1,0 +1,468 @@
+.mic-button {
+    min-height: 44px;
+    padding: 0 16px;
+  
+    border:
+      1px solid rgba(148, 163, 184, 0.2);
+  
+    border-radius: 12px;
+  
+    color: #cbd5e1;
+    background:
+      rgba(255, 255, 255, 0.05);
+  
+    font-size: 12px;
+    font-weight: 800;
+  }
+  
+  .mic-button:hover {
+    background:
+      rgba(255, 255, 255, 0.1);
+  }
+  
+  .mic-button.active {
+    color: #bbf7d0;
+  
+    border-color:
+      rgba(34, 197, 94, 0.4);
+  
+    background:
+      rgba(34, 197, 94, 0.12);
+  
+    box-shadow:
+      0 0 18px
+      rgba(34, 197, 94, 0.12);
+  }
+  
+  .mic-error {
+    width: min(1600px, calc(100% - 56px));
+  
+    margin:
+      18px
+      auto
+      0;
+  
+    padding: 12px 16px;
+  
+    border:
+      1px solid rgba(239, 68, 68, 0.3);
+  
+    border-radius: 12px;
+  
+    color: #fecaca;
+  
+    background:
+      rgba(239, 68, 68, 0.1);
+  
+    font-size: 12px;
+  }
+  
+  .live-score {
+    min-width: 68px;
+    min-height: 68px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    border:
+      1px solid rgba(250, 204, 21, 0.25);
+  
+    border-radius: 18px;
+  
+    background:
+      linear-gradient(
+        135deg,
+        rgba(250, 204, 21, 0.16),
+        rgba(249, 115, 22, 0.12)
+      );
+  
+    box-shadow:
+      0 14px 35px
+      rgba(250, 204, 21, 0.08);
+  }
+  
+  .live-score small {
+    color: #fde68a;
+  
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+  
+  .live-score strong {
+    margin-top: 2px;
+  
+    color: #fef08a;
+  
+    font-size: 27px;
+    line-height: 1;
+  }
+  
+  .score-meters {
+    width: 100%;
+  
+    margin-top: 13px;
+  
+    display: grid;
+  
+    grid-template-columns:
+      repeat(3, 1fr);
+  
+    gap: 7px;
+  }
+  
+  .score-meters > div {
+    min-width: 0;
+  
+    padding: 9px 5px;
+  
+    display: flex;
+    flex-direction: column;
+  
+    align-items: center;
+  
+    border-radius: 10px;
+  
+    background:
+      rgba(255, 255, 255, 0.04);
+  }
+  
+  .score-meters span {
+    color: #64748b;
+  
+    font-size: 8px;
+  }
+  
+  .score-meters b {
+    margin-top: 2px;
+  
+    color: #e2e8f0;
+  
+    font-size: 14px;
+  }
+  
+  .ranking-card {
+    padding: 21px;
+  
+    border:
+      1px solid rgba(255, 255, 255, 0.08);
+  
+    border-radius: 22px;
+  
+    background:
+      rgba(15, 23, 42, 0.75);
+  
+    backdrop-filter: blur(15px);
+  
+    box-shadow:
+      0 24px 60px
+      rgba(0, 0, 0, 0.18);
+  }
+  
+  .ranking-heading h2 {
+    margin:
+      4px
+      0
+      0;
+  
+    color: #f8fafc;
+  
+    font-size: 20px;
+  }
+  
+  .ranking-empty {
+    padding:
+      30px
+      0
+      18px;
+  
+    text-align: center;
+  
+    color: #64748b;
+  
+    font-size: 11px;
+  }
+  
+  .ranking-list {
+    margin-top: 16px;
+  
+    display: flex;
+    flex-direction: column;
+  
+    gap: 8px;
+  }
+  
+  .ranking-item {
+    padding: 10px;
+  
+    display: grid;
+  
+    grid-template-columns:
+      34px
+      minmax(0, 1fr)
+      48px;
+  
+    gap: 9px;
+  
+    align-items: center;
+  
+    border:
+      1px solid rgba(255, 255, 255, 0.06);
+  
+    border-radius: 12px;
+  
+    background:
+      rgba(2, 6, 23, 0.42);
+  }
+  
+  .ranking-position {
+    display: grid;
+    place-items: center;
+  
+    font-size: 18px;
+  }
+  
+  .ranking-info {
+    min-width: 0;
+  
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ranking-info strong,
+  .ranking-info span {
+    overflow: hidden;
+  
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  .ranking-info strong {
+    color: #f8fafc;
+  
+    font-size: 12px;
+  }
+  
+  .ranking-info span {
+    margin-top: 2px;
+  
+    color: #64748b;
+  
+    font-size: 9px;
+  }
+  
+  .ranking-score {
+    height: 38px;
+  
+    display: grid;
+    place-items: center;
+  
+    border-radius: 11px;
+  
+    color: #fef08a;
+  
+    background:
+      rgba(250, 204, 21, 0.1);
+  
+    font-size: 17px;
+    font-weight: 900;
+  }
+  
+  /* ================================ */
+  /* PONTUAÇÃO NA TELA DA TV          */
+  /* ================================ */
+  
+  .tv-score-badge {
+    position: fixed;
+  
+    top: 24px;
+    right: 28px;
+  
+    z-index: 20;
+  
+    width: 92px;
+    height: 92px;
+  
+    display: flex;
+    flex-direction: column;
+  
+    align-items: center;
+    justify-content: center;
+  
+    border:
+      1px solid rgba(250, 204, 21, 0.32);
+  
+    border-radius: 50%;
+  
+    color: #fff;
+  
+    background:
+      rgba(2, 6, 23, 0.82);
+  
+    backdrop-filter: blur(12px);
+  
+    box-shadow:
+      0 15px 45px
+      rgba(0, 0, 0, 0.35);
+  }
+  
+  .tv-score-badge span {
+    color: #fde68a;
+  
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+  }
+  
+  .tv-score-badge strong {
+    margin-top: 2px;
+  
+    color: #fef08a;
+  
+    font-size: 33px;
+    line-height: 1;
+  }
+  
+  .tv-result-overlay {
+    position: fixed;
+  
+    inset: 0;
+  
+    z-index: 100;
+  
+    display: grid;
+    place-items: center;
+  
+    background:
+      rgba(2, 6, 23, 0.86);
+  
+    backdrop-filter: blur(16px);
+  }
+  
+  .tv-result-card {
+    width: min(560px, calc(100% - 40px));
+  
+    padding: 42px;
+  
+    text-align: center;
+  
+    border:
+      1px solid rgba(250, 204, 21, 0.25);
+  
+    border-radius: 30px;
+  
+    background:
+      linear-gradient(
+        160deg,
+        #111827,
+        #0f172a
+      );
+  
+    box-shadow:
+      0 40px 120px
+      rgba(0, 0, 0, 0.65);
+  }
+  
+  .result-label {
+    color: #fde68a;
+  
+    font-size: 11px;
+    font-weight: 900;
+  
+    letter-spacing: 2px;
+  }
+  
+  .result-trophy {
+    margin-top: 15px;
+  
+    font-size: 54px;
+  }
+  
+  .result-score {
+    margin-top: 5px;
+  
+    color: #fef08a;
+  
+    font-size: 96px;
+    font-weight: 900;
+  
+    line-height: 1;
+  
+    text-shadow:
+      0 0 35px
+      rgba(250, 204, 21, 0.25);
+  }
+  
+  .tv-result-card h2 {
+    margin:
+      12px
+      0
+      23px;
+  
+    color: #fff;
+  
+    font-size: 29px;
+  }
+  
+  .result-singer {
+    display: block;
+  
+    color: #e2e8f0;
+  
+    font-size: 22px;
+  }
+  
+  .result-song {
+    display: block;
+  
+    margin-top: 5px;
+  
+    color: #94a3b8;
+  
+    font-size: 13px;
+  }
+  
+  .result-details {
+    margin-top: 28px;
+  
+    display: grid;
+  
+    grid-template-columns:
+      repeat(3, 1fr);
+  
+    gap: 10px;
+  }
+  
+  .result-details > div {
+    padding: 13px 8px;
+  
+    display: flex;
+    flex-direction: column;
+  
+    border-radius: 14px;
+  
+    background:
+      rgba(255, 255, 255, 0.05);
+  }
+  
+  .result-details span {
+    color: #94a3b8;
+  
+    font-size: 10px;
+  }
+  
+  .result-details b {
+    margin-top: 3px;
+  
+    color: #fff;
+  
+    font-size: 20px;
+  }
+  
+  @media (max-width: 900px) {
+    .mic-button {
+      width: 100%;
+    }
+  }

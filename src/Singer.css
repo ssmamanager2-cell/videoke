@@ -1,0 +1,286 @@
+/* =========================================================
+   VIDEOKÊ - CADASTRO E SELEÇÃO DE CANTORES
+   Arquivo novo: src/Singer.css
+   ========================================================= */
+
+   .singer-modal {
+    width: min(560px, calc(100vw - 32px));
+    max-height: 88vh;
+    overflow-y: auto;
+  }
+  
+  .singer-section {
+    width: 100%;
+    margin: 22px 0 18px;
+  }
+  
+  .singer-title-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+  
+  .singer-title-row > div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  
+  .singer-title-row label {
+    margin: 0;
+    color: #f8fafc;
+    font-size: 14px;
+    font-weight: 800;
+  }
+  
+  .singer-title-row span {
+    color: #8f9bb2;
+    font-size: 11px;
+  }
+  
+  .singer-manage-button {
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 9px;
+    padding: 7px 10px;
+    background: rgba(15, 23, 42, 0.65);
+    color: #aeb9cc;
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  
+  .singer-manage-button:hover {
+    border-color: rgba(96, 165, 250, 0.55);
+    color: #e2e8f0;
+  }
+  
+  .singer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+  
+  .singer-option {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 58px;
+    padding: 9px 12px;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 12px;
+    background: rgba(13, 20, 40, 0.82);
+    color: #dce5f5;
+    text-align: left;
+    cursor: pointer;
+    transition:
+      transform 0.16s ease,
+      border-color 0.16s ease,
+      background 0.16s ease;
+  }
+  
+  .singer-option:hover {
+    transform: translateY(-1px);
+    border-color: rgba(96, 165, 250, 0.5);
+    background: rgba(21, 32, 61, 0.95);
+  }
+  
+  .singer-option.selected {
+    border-color: rgba(65, 134, 255, 0.95);
+    background:
+      linear-gradient(
+        135deg,
+        rgba(36, 75, 170, 0.32),
+        rgba(26, 43, 90, 0.72)
+      );
+    box-shadow:
+      inset 0 0 0 1px rgba(72, 130, 255, 0.15),
+      0 8px 22px rgba(19, 55, 150, 0.18);
+  }
+  
+  .singer-avatar {
+    display: grid;
+    place-items: center;
+    flex: 0 0 37px;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    background:
+      linear-gradient(145deg, #445fff, #2739a8);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 900;
+    box-shadow: 0 5px 14px rgba(37, 58, 170, 0.3);
+  }
+  
+  .singer-option strong {
+    min-width: 0;
+    overflow: hidden;
+    color: #f8fafc;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .singer-check {
+    position: absolute;
+    top: 8px;
+    right: 9px;
+    display: grid;
+    place-items: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #3b82f6;
+    color: white;
+    font-size: 11px;
+    font-weight: 900;
+  }
+  
+  .singer-empty {
+    margin-bottom: 10px;
+    padding: 13px;
+    border: 1px dashed rgba(148, 163, 184, 0.25);
+    border-radius: 11px;
+    background: rgba(15, 23, 42, 0.44);
+    color: #93a0b7;
+    font-size: 12px;
+    line-height: 1.45;
+    text-align: center;
+  }
+  
+  .new-singer-button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 12px;
+    border: 1px dashed rgba(88, 138, 255, 0.46);
+    border-radius: 10px;
+    background: rgba(31, 54, 112, 0.18);
+    color: #9ab9ff;
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+  }
+  
+  .new-singer-button:hover {
+    border-color: rgba(96, 165, 250, 0.8);
+    background: rgba(41, 76, 165, 0.24);
+    color: #c8d9ff;
+  }
+  
+  .new-singer-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    margin-top: 9px;
+    padding: 10px;
+    border-radius: 11px;
+    background: rgba(8, 13, 28, 0.58);
+  }
+  
+  .new-singer-form input {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+  }
+  
+  .singer-register-button {
+    min-width: 92px;
+    border: 0;
+    border-radius: 9px;
+    padding: 0 14px;
+    background: #3b6df6;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 900;
+    cursor: pointer;
+  }
+  
+  .singer-register-button:disabled {
+    opacity: 0.42;
+    cursor: not-allowed;
+  }
+  
+  .singer-manager {
+    margin-top: 11px;
+    padding: 11px;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    border-radius: 11px;
+    background: rgba(8, 13, 28, 0.56);
+  }
+  
+  .singer-manager > strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  
+  .singer-manager-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .singer-manager-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 7px 8px 7px 10px;
+    border-radius: 8px;
+    background: rgba(22, 31, 54, 0.7);
+  }
+  
+  .singer-manager-item span {
+    overflow: hidden;
+    color: #e2e8f0;
+    font-size: 12px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .singer-manager-item button {
+    flex: 0 0 auto;
+    border: 1px solid rgba(248, 113, 113, 0.28);
+    border-radius: 7px;
+    padding: 5px 8px;
+    background: rgba(127, 29, 29, 0.16);
+    color: #fca5a5;
+    font-size: 10px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  
+  .singer-manager-item button:hover {
+    background: rgba(153, 27, 27, 0.28);
+  }
+  
+  .singer-add-queue-button {
+    width: 100%;
+  }
+  
+  .singer-add-queue-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+  
+  @media (max-width: 560px) {
+    .singer-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .new-singer-form {
+      grid-template-columns: 1fr;
+    }
+  
+    .singer-register-button {
+      min-height: 40px;
+    }
+  }
+  
