@@ -9,6 +9,7 @@ import './Score.css'
 import './Mascot.css'
 import './Singer.css'
 import './Auth.css'
+import './Admin.css'
 
 type AppRole = 'master' | 'user'
 
@@ -705,6 +706,9 @@ function ControlPanel({
   role: AppRole
   onLogout: () => Promise<void>
 }) {
+  const [showUserSettings, setShowUserSettings] =
+    useState(false)
+
   const [search, setSearch] = useState('')
   const [results, setResults] = useState<Music[]>([])
   const [queue, setQueue] = useState<QueueItem[]>([])
@@ -1447,6 +1451,21 @@ function ControlPanel({
         </div>
 
         <div className="topbar-actions">
+          {role === 'master' && (
+            <button
+              type="button"
+              className="user-settings-button"
+              onClick={() =>
+                setShowUserSettings(true)
+              }
+            >
+              <span className="user-settings-icon">
+                ⚙
+              </span>
+              Configuração de usuários
+            </button>
+          )}
+
           <div className="account-chip">
             <div className="account-chip-text">
               <strong>
@@ -1987,6 +2006,122 @@ function ControlPanel({
                   </button>
                 </div>
               )}
+
+              {showUserSettings &&
+                role === 'master' && (
+                  <div
+                    className="user-settings-overlay"
+                    onMouseDown={(event) => {
+                      if (
+                        event.target ===
+                        event.currentTarget
+                      ) {
+                        setShowUserSettings(false)
+                      }
+                    }}
+                  >
+                    <section className="user-settings-modal">
+                      <header className="user-settings-header">
+                        <div>
+                          <span className="user-settings-kicker">
+                            ÁREA MASTER
+                          </span>
+                          <h2>
+                            Configuração de usuários
+                          </h2>
+                          <p>
+                            Esta área é exclusiva do
+                            perfil Master.
+                          </p>
+                        </div>
+
+                        <button
+                          type="button"
+                          className="user-settings-close"
+                          onClick={() =>
+                            setShowUserSettings(false)
+                          }
+                          aria-label="Fechar configurações de usuários"
+                        >
+                          ×
+                        </button>
+                      </header>
+
+                      <div className="user-settings-info">
+                        <div className="user-settings-current">
+                          <span>
+                            Usuário conectado
+                          </span>
+                          <strong>
+                            {currentUser.email ??
+                              'Master'}
+                          </strong>
+                        </div>
+
+                        <span className="user-settings-role">
+                          Master
+                        </span>
+                      </div>
+
+                      <div className="user-settings-grid">
+                        <article className="user-settings-card">
+                          <div className="user-settings-card-icon">
+                            👤
+                          </div>
+                          <div>
+                            <strong>
+                              Usuários do VideoKê
+                            </strong>
+                            <p>
+                              Gerenciamento de contas
+                              será feito nesta área.
+                            </p>
+                          </div>
+                        </article>
+
+                        <article className="user-settings-card">
+                          <div className="user-settings-card-icon">
+                            🔐
+                          </div>
+                          <div>
+                            <strong>
+                              Acesso protegido
+                            </strong>
+                            <p>
+                              Usuários comuns não veem
+                              este botão nem este painel.
+                            </p>
+                          </div>
+                        </article>
+                      </div>
+
+                      <div className="user-settings-note">
+                        <strong>
+                          VideoKê continua completo para
+                          o usuário comum.
+                        </strong>
+                        <span>
+                          Busca de músicas, cadastro de
+                          cantores, fila, reprodução,
+                          tela da TV, tela cheia,
+                          microfone, pontuação e ranking
+                          permanecem disponíveis.
+                        </span>
+                      </div>
+
+                      <footer className="user-settings-footer">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setShowUserSettings(false)
+                          }
+                        >
+                          Fechar
+                        </button>
+                      </footer>
+                    </section>
+                  </div>
+                )}
 
               {showSingerManager &&
                 singers.length > 0 && (

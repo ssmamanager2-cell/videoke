@@ -1,0 +1,303 @@
+/* =========================================================
+   VIDEOKÊ - ÁREA MASTER / CONFIGURAÇÃO DE USUÁRIOS
+   ========================================================= */
+
+   .user-settings-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 38px;
+    padding: 0 13px;
+    border: 1px solid rgba(123, 143, 255, 0.22);
+    border-radius: 11px;
+    background: linear-gradient(
+      135deg,
+      rgba(70, 88, 220, 0.28),
+      rgba(98, 63, 177, 0.22)
+    );
+    color: #e7ebff;
+    font: inherit;
+    font-size: 10px;
+    font-weight: 900;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      transform 0.18s ease,
+      border-color 0.18s ease,
+      background 0.18s ease;
+  }
+  
+  .user-settings-button:hover {
+    transform: translateY(-1px);
+    border-color: rgba(132, 150, 255, 0.5);
+    background: linear-gradient(
+      135deg,
+      rgba(78, 97, 234, 0.42),
+      rgba(111, 69, 201, 0.34)
+    );
+  }
+  
+  .user-settings-icon {
+    font-size: 14px;
+    line-height: 1;
+  }
+  
+  .user-settings-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10050;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: rgba(2, 6, 18, 0.74);
+    backdrop-filter: blur(10px);
+  }
+  
+  .user-settings-modal {
+    width: min(100%, 620px);
+    max-height: min(86vh, 760px);
+    overflow: auto;
+    border: 1px solid rgba(117, 137, 255, 0.2);
+    border-radius: 24px;
+    background: linear-gradient(
+      180deg,
+      rgba(15, 21, 46, 0.98),
+      rgba(8, 13, 31, 0.99)
+    );
+    box-shadow:
+      0 34px 100px rgba(0, 0, 0, 0.52),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+  
+  .user-settings-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 24px 24px 19px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  }
+  
+  .user-settings-kicker {
+    display: block;
+    margin-bottom: 7px;
+    color: #8195ff;
+    font-size: 9px;
+    font-weight: 950;
+    letter-spacing: 0.16em;
+  }
+  
+  .user-settings-header h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 1.15;
+  }
+  
+  .user-settings-header p {
+    margin: 7px 0 0;
+    color: #8f9ab0;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  
+  .user-settings-close {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.025);
+    color: #b8c1d6;
+    font-size: 23px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  
+  .user-settings-close:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+  }
+  
+  .user-settings-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 20px 24px 0;
+    padding: 14px 16px;
+    border: 1px solid rgba(117, 137, 255, 0.14);
+    border-radius: 14px;
+    background: rgba(19, 28, 61, 0.48);
+  }
+  
+  .user-settings-current {
+    min-width: 0;
+  }
+  
+  .user-settings-current span {
+    display: block;
+    margin-bottom: 4px;
+    color: #7e8aa2;
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  
+  .user-settings-current strong {
+    display: block;
+    overflow: hidden;
+    color: #eef1ff;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .user-settings-role {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 68px;
+    min-height: 28px;
+    padding: 0 10px;
+    border: 1px solid rgba(132, 150, 255, 0.2);
+    border-radius: 999px;
+    background: rgba(79, 96, 214, 0.18);
+    color: #bfc9ff;
+    font-size: 9px;
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  
+  .user-settings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 18px 24px 0;
+  }
+  
+  .user-settings-card {
+    display: flex;
+    gap: 12px;
+    min-height: 100px;
+    padding: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 16px;
+    background: rgba(8, 13, 31, 0.66);
+  }
+  
+  .user-settings-card-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: rgba(92, 109, 255, 0.14);
+    font-size: 18px;
+  }
+  
+  .user-settings-card strong {
+    display: block;
+    margin: 2px 0 5px;
+    color: #f3f5ff;
+    font-size: 11px;
+  }
+  
+  .user-settings-card p {
+    margin: 0;
+    color: #7e8aa2;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  
+  .user-settings-note {
+    display: grid;
+    gap: 5px;
+    margin: 18px 24px 0;
+    padding: 14px 16px;
+    border: 1px solid rgba(52, 211, 153, 0.13);
+    border-radius: 14px;
+    background: rgba(6, 78, 59, 0.1);
+  }
+  
+  .user-settings-note strong {
+    color: #b8f3da;
+    font-size: 10px;
+  }
+  
+  .user-settings-note span {
+    color: #86a99a;
+    font-size: 9px;
+    line-height: 1.55;
+  }
+  
+  .user-settings-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 24px 24px;
+  }
+  
+  .user-settings-footer button {
+    min-width: 96px;
+    height: 38px;
+    border: 1px solid rgba(124, 143, 255, 0.22);
+    border-radius: 11px;
+    background: rgba(77, 94, 207, 0.18);
+    color: #e7ebff;
+    font: inherit;
+    font-size: 10px;
+    font-weight: 900;
+    cursor: pointer;
+  }
+  
+  .user-settings-footer button:hover {
+    background: rgba(77, 94, 207, 0.3);
+  }
+  
+  @media (max-width: 760px) {
+    .user-settings-button {
+      width: 38px;
+      padding: 0;
+      font-size: 0;
+    }
+  
+    .user-settings-icon {
+      font-size: 15px;
+    }
+  
+    .user-settings-overlay {
+      padding: 12px;
+    }
+  
+    .user-settings-modal {
+      border-radius: 19px;
+    }
+  
+    .user-settings-header {
+      padding: 20px 18px 16px;
+    }
+  
+    .user-settings-info {
+      margin: 16px 18px 0;
+    }
+  
+    .user-settings-grid {
+      grid-template-columns: 1fr;
+      padding: 14px 18px 0;
+    }
+  
+    .user-settings-note {
+      margin: 14px 18px 0;
+    }
+  
+    .user-settings-footer {
+      padding: 18px;
+    }
+  }
+  
